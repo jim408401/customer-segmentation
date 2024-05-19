@@ -45,6 +45,7 @@ order_products__train.csv 和 order_products__prior.csv：提供每個訂單中�
 ## 2. 依照購買商品進行客戶分群
 
 結果顯示分群結果為：
+
 Cluster 1 - 健康和天然食品
 
 主要購買產品：草藥、蔬菜、穀物、豆類、乾貨、豆腐、肉類、海鮮等
