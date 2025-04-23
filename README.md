@@ -1,97 +1,97 @@
-# Customer-Segmentation
+Customer Segmentation
 
-## 專案介紹
+Project Overview
 
-本專案旨在通過銷售數據進行客戶分群，以理解客戶行為並根據不同客戶群體制定針對性的營銷策略。
+This project focuses on segmenting customers using sales data to understand customer behaviors and develop targeted marketing strategies tailored to different customer groups.
 
-資料集：https://www.kaggle.com/c/instacart-market-basket-analysis/data
+Dataset: Instacart Market Basket Analysis
 
-## 資料集介紹
+Dataset Description
 
-orders.csv：包含所有客戶訂單，分為之前的訂單（prior）、訓練集（train）和測試集（test）。
+orders.csv: Contains all customer orders, categorized into prior orders, training set, and test set.
 
-products.csv：銷售的產品清單。
+products.csv: List of products available for purchase.
 
-aisles.csv：關於走道的信息。
+aisles.csv: Information about product aisles.
 
-departments.csv：關於產品種類的信息。
+departments.csv: Details about product categories.
 
-order_products__train.csv 和 order_products__prior.csv：提供每個訂單中的產品信息。
+order_products__train.csv and order_products__prior.csv: Provide product details for each order.
 
-## 1. 探索性資料分析（EDA）
+Exploratory Data Analysis (EDA)
 
-訂單分佈：
-分析所有顧客的訂單數量，按 prior、train 和 test 分布。
+Order Distribution
 
-訂單頻率：
-每位顧客的訂單數量從 4 到 100 不等，大部分顧客的訂單數量較少。
+Analyzed the number of orders per customer, categorized into prior, train, and test sets.
 
-最受歡迎的購物日和購物時間：
-大多數購物行為集中在週末，週六和週日是高峰購物日，購物高峰時段為上午 10 點到下午 5 點，凌晨 1 點到 5 點活動最少。
+Order Frequency
 
-客戶消費頻率：
-平均消費頻率約為每 11.11 天，中位數為 7 天。
+The number of orders per customer ranges from 4 to 100, with most customers having fewer orders.
 
-重複購買比例：
-商品的重複購買比例約為 0.6，顯示顧客對某些商品的忠誠度較高。
+Popular Shopping Days and Times
 
-每筆訂單的商品數量：
-多數顧客每次購買 5 到 7 件商品。
+Most shopping occurs during weekends, particularly Saturdays and Sundays.
 
-最常購買的商品：
-高偏好有機產品，如「有機香蕉」、「有機草莓」和「有機菠菜」，水果類商品特別受歡迎。
-基本食材（如「有機菠菜」、「有機牛油果」和「有機全脂牛奶」）購買次數也很高。
+Peak shopping hours are between 10 AM to 5 PM; lowest between 1 AM to 5 AM.
 
-## 2. 依照購買商品進行客戶分群
+Customer Purchasing Frequency
 
-結果顯示分群結果為：
+Average purchasing frequency: every 11.11 days (median: 7 days).
 
-Cluster 1 - 健康和天然食品
+Reorder Ratio
 
-主要購買產品：草藥、蔬菜、穀物、豆類、乾貨、豆腐、肉類、海鮮等
+Products have a high reorder ratio (~0.6), indicating customer loyalty.
 
-特點：這一組顧客可能非常注重健康和自然飲食，偏好新鮮和有機產品。他們可能是素食者或者尋求高纖維、低脂肪的飲食方案，也可能熱衷於自己烹飪。
+Items per Order
 
-Cluster 2 - 酒類和個人護理產品
+Typically, customers buy between 5 to 7 items per order.
 
-主要購買產品：葡萄酒、香檳、紅葡萄酒、啤酒、調酒器材、護理產品等
+Frequently Purchased Products
 
-特點：這一組的顧客可能更偏向於享受生活，有較高的收入水平，喜歡聚會和社交活動。他們購買昂貴的酒類和高品質的個人護理產品，關注外表和個人形象。
+Preferred organic products: "Organic Bananas," "Organic Strawberries," "Organic Spinach."
 
-Cluster 3 - 休閒食品和健康小食
+Frequently bought staple items: "Organic Avocado," "Organic Whole Milk."
 
-主要購買產品：優格、燕麥棒、茶、口香糖、零食、糕點等
+Customer Segmentation by Purchased Products
 
-特點：這群顧客可能注重健康與便利，偏好快速且營養的食品選擇。可能是忙碌的專業人士或學生，尋找可以快速食用的健康零食。
+Cluster 1 - Health and Natural Foods
 
-Cluster 4 - 嬰幼兒護理和家庭產品
+Products: Herbs, vegetables, grains, legumes, dried goods, tofu, meat, seafood.
 
-主要購買產品：嬰兒食品和配方奶、嬰兒用品、尿布、嬰兒洗護用品等
+Characteristics: Health-conscious, prefer organic and fresh products, possibly vegetarians, focused on healthy cooking.
 
-特點：這一組顧客主要可能是有小孩的家庭，特別是嬰幼兒，他們的購物清單集中在滿足嬰幼兒日常需要上。這些家庭可能在尋找方便和高品質的嬰兒用品，以確保孩子的健康和舒適。
+Cluster 2 - Alcohol and Personal Care Products
 
-## 3. 依照顧客價值進行客戶分群
+Products: Wine, champagne, beer, cocktail mixers, personal care items.
 
-Cluster 1 - 活躍且高價值顧客
+Characteristics: Affluent, socially active, prefer premium products.
 
-策略：維持和增強客戶忠誠度
+Cluster 3 - Snacks and Healthy Quick Meals
 
-提供專屬優惠和會員積分、推出新品時優先通知、組織VIP客戶活動。
+Products: Yogurt, granola bars, tea, chewing gum, snacks, pastries.
 
-Cluster 2 - 最近活躍但價值較低的顧客
+Characteristics: Busy individuals (professionals/students) who prioritize quick, nutritious options.
 
-策略：提高客單價和購買頻率
+Cluster 4 - Infant Care and Household Products
 
-提供組合優惠、捆綁銷售、鼓勵客戶進行更多的回購（例如，下一次購買有折扣）、針對性推薦適合他們的高價值產品。
+Products: Baby food, formula, diapers, baby hygiene products.
 
-Cluster 3 - 潛在流失的中價值顧客
+Characteristics: Families with infants/young children, focused on comfort and health.
 
-策略：喚醒顧客，防止流失
+Customer Segmentation by Customer Value
 
-發送定期促銷郵件或信息提醒、提供限時折扣以激勵回購、收集反饋，了解顧客流失的原因，並進行針對性改進。
+Cluster 1 - Active and High-Value Customers
 
-Cluster 4 - 高頻率高價值但可能流失的顧客
+Strategy: Enhance loyalty with exclusive discounts, loyalty programs, and VIP events.
 
-策略：挽回顧客，提升滿意度
+Cluster 2 - Recently Active but Lower-Value Customers
 
-針對性地提供挽回優惠（例如，下單有贈品）、提高售後服務質量，解決他們的問題和疑慮、定期關懷，了解他們的需求變化，並提供個性化服務。
+Strategy: Increase order value and frequency with bundled deals and targeted recommendations.
+
+Cluster 3 - Potentially Churning Mid-Value Customers
+
+Strategy: Reactivate customers with promotions, discounts, and feedback solicitation.
+
+Cluster 4 - High-Frequency, High-Value but Potentially Churning Customers
+
+Strategy: Improve satisfaction with targeted incentives, personalized service, and high-quality customer support.
